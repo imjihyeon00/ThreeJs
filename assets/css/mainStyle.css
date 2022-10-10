@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Times New Roman", Times, serif;
+}
+
+/* a 링크 초기화 */
+a {
+    color: #222;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #2698cb;
+}
+
+/* 블릿기호 초기화 */
+ul,
+li,
+ol {
+    list-style: none;
+}
+
+/* 버튼 초기화 */
+button {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+header {display: flex; justify-content: space-around; align-items: center;}
+header h1 {font-size: 28px; font-weight: bold; z-index: 1;}
+header button {height: 32px; z-index: 1; -webkit-user-select: none; user-select: none;}
+header button span {display: block; width: 33px; height: 2px; margin-bottom: 5px; position: relative;  background: #222; border-radius: 3px; z-index: 1; transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease;}
+header button span:first-child {transform-origin: 0%, 0%; }
+header button span:last-child {margin-bottom: 0; } 
+header button span:nth-child(2) {height: 3px;}
+
+header.show button {}
+header.show button span {}
+header.show button span:first-child {transform: rotate(45deg) translate(10px, 10px)}
+header.show button span:last-child {transform: rotate(-45deg) translate(0, -1px);}
+header.show button span:nth-child(2) {opacity: 0; transform: rotate(0deg) scale(0.2, 0.2);}
+
+header nav {background-color: rgba(255, 255, 255, 0.7); position: fixed; top: 0; bottom: 0; left: -100%; width: 100%; transition: all .2s;}
+header.show nav {left: 0;}
+header nav > ul {position: absolute; top: 0; bottom: 0; left: 0; right: 30%; background-color: #c0dbda; padding: 60px 15px 15px; }
+header nav > ul > li {}
+header nav > ul > li a {font-size: 20px; font-weight: bold; line-height: 2;}
+header nav > ul > li.bottom {position: absolute; left: 0; right: 0; bottom: 0; border-top: 1px solid #2698cb; margin: 0 15px;}
+header nav > ul > li.bottom ul {display: flex; align-items: center;}
+header nav > ul > li.bottom ul li {flex: 1 1 0; text-align: center;}
+header nav > ul > li.bottom ul li a {display: block; line-height: 4;}
